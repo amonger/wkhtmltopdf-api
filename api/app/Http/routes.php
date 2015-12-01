@@ -16,7 +16,7 @@ use Knp\Snappy\Pdf;
 
 $app->post('/html', function (Request $request) use ($app) {
     $pdf = new Pdf('xvfb-run -a -s "-screen 0 640x480x16" wkhtmltopdf');
-    echo base64_encode($pdf->getOutputFromHtml($request->get('html')));
+    echo base64_encode($pdf->getOutputFromHtml(base64_decode($request->get('html'))));
 });
 
 $app->post('/url', function (Request $request) use ($app) {
