@@ -11,6 +11,10 @@
 |
 */
 
+$app->get('/url/', function () use ($app) {
+    echo "test";
+});
+
 $app->get('/', function () use ($app) {
     $pdf = new \Knp\Snappy\Pdf('xvfb-run -a -s "-screen 0 640x480x16" wkhtmltopdf');
     echo base64_encode($pdf->getOutput('http://www.google.com'));
