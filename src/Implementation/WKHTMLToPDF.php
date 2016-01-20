@@ -18,4 +18,9 @@ class WKHTMLToPDF implements PDFGeneratorInterface
     {
         return $this->pdf->getOutput($url);
     }
+
+    public function fromHTML($html)
+    {
+        return $this->pdf->getOutputFromHtml(base64_decode($request->get('html')));
+    }
 }

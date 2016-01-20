@@ -8,4 +8,9 @@ class PDFGenerator extends AbstractPDFGenerator
     {
         return $this->generator->fromURL($url);
     }
+
+    public function fromHTML($html)
+    {
+        return $this->generator->fromHTML($html);
+    }
 }

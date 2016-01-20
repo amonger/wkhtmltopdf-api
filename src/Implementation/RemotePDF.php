@@ -24,4 +24,15 @@ class RemotePDF implements PDFGeneratorInterface
 
         return base64_decode($res->getBody());
     }
+
+    public function fromHTML($html)
+    {
+      $res = $this->client->post('/html', [
+          'query'=> [
+              'html' => $html
+          ]
+      ]);
+      
+      return base64_decode($res);
+    }
 }
