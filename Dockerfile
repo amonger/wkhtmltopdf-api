@@ -1,6 +1,6 @@
 FROM ubuntu
 
-RUN apt-get update -y
+RUN apt-get update --fix-missing -y
 RUN apt-get install php5 wkhtmltopdf -y
 RUN apt-get install xvfb -y
 RUN a2enmod rewrite
