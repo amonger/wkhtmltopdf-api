@@ -1,0 +1,17 @@
+{
+    "name": "amonger/wkhtmltopdf-api",
+    "authors": [
+        {
+            "name": "Alan Monger",
+            "email": "haveacigaro@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "PDFGenerator\\" : "src/"
+        }
+    }
+}
