@@ -32,7 +32,7 @@ class RemotePDF implements PDFGeneratorInterface
               'html' => $html
           ]
       ]);
-      
-      return base64_decode($res);
+
+      return base64_decode($res->getBody());
     }
 }
