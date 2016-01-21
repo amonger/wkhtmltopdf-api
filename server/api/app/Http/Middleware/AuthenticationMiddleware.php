@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class ExampleMiddleware
+class AuthenticationMiddleware
 {
     /**
      * Handle an incoming request.
@@ -15,6 +15,8 @@ class ExampleMiddleware
      */
     public function handle($request, Closure $next)
     {
+        if ($request->header('auth') !== getenv('auth_key')) abort(401);
+
         return $next($request);
     }
 }
