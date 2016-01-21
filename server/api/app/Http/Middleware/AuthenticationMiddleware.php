@@ -15,7 +15,7 @@ class AuthenticationMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if ($request->header('auth') !== getenv('auth_key')) abort(401);
+        if ($request->header('auth') !== env('AUTH_KEY')) abort(401);
 
         return $next($request);
     }
