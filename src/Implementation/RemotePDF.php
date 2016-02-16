@@ -29,7 +29,7 @@ class RemotePDF implements PDFGeneratorInterface
     {
       $res = $this->client->post('/html', [
           'query'=> [
-              'html' => $html
+              'html' => base64_encode($html)
           ]
       ]);
 
