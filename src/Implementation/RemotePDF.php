@@ -27,12 +27,9 @@ class RemotePDF implements PDFGeneratorInterface
 
     public function fromHTML($html)
     {
-      $res = $this->client->post('/html', [
-          'query'=> [
-              'html' => base64_encode($html)
-          ]
-      ]);
+        $request = new \GuzzleHttp\Psr7\Request('POST', '/html', [], base64_encode($html));
+        $res = $this->client->send($request);
 
-      return base64_decode($res->getBody());
+        return base64_decode($res->getBody()->getContents());
     }
 }
